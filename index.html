@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio</title>
+</head>
+
+<body>
+    <div class="mainwrap">
+        <header>
+            <label for="togglebar"><i class="fas fa-bars" id="bar"></i></label>
+            <h1>Portfolio</h1>
+            <input type="search" name="search" id="search" placeholder="Search" autocomplete="off">
+            <div class="blank"></div>
+            <i class="fa fa-plus-circle" id="plus"></i>
+            <i class="far fa-bell" id="bell"></i>
+            <hr>
+            <img src="img/user6.jpg" id="user">
+            <h4>Hira R</h4>
+        </header>
+
+        <section class="mainsection">
+            <input type="checkbox" name="navbar" id="togglebar">
+            <nav>
+                <input type="radio" name="nav-item" id="nav1" checked>
+                <label for="nav1" id="nav1">
+                    <i class="fas fa-home stroke-transparent" id="nav-icon"></i>
+                    <h4>Home</h4>
+                </label>
+                <input type="radio" name="nav-item" id="nav2">
+                <label for="nav2" id="nav2">
+                    <i class="far fa-user-circle " id="nav-icon"></i>
+                    <h4>Profile</h4>
+                </label>
+                <input type="radio" name="nav-item" id="nav3">
+                <label for="nav3" id="nav3">
+                    <i class="far fa-comment-alt " id="nav-icon"></i>
+                    <h4>Chats</h4>
+                </label>
+                <input type="radio" name="nav-item" id="nav4">
+                <label for="nav4" id="nav4">
+                    <i class="far fa-calendar-alt " id="nav-icon"></i>
+                    <h4>Schedule</h4>
+                </label>
+                <input type="radio" name="nav-item" id="nav5">
+                <label for="nav5" id="nav5">
+                    <i class="far fa-clock " id="nav-icon"></i>
+                    <h4> Clock </h4>
+                </label>
+                <input type="radio" name="nav-item" id="nav6">
+                <label for="nav6" id="nav6">
+                    <i class="fa fa-cog stroke-transparent" id="nav-icon"></i>
+                    <h4>Setings</h4>
+                </label>
+            </nav>
+
+            <div class="pro-chats">
+                <section class="pro">
+                    <div class="main-header">
+                        <h4 class="mtitle">Projects</h4>
+                        <h4 class="mdate">Jan,2021</h4>
+                    </div>
+                    <div class="sub-header">
+                        <div class="status">
+                            <div class="sdata">
+                                <h4>45</h4>
+                                <h5>In Progress</h5>
+                            </div>
+
+                            <div class="icircle"><i class="far fa-circle "></i></div>
+                            <div class="sdata">
+                                <h4>12</h4>
+                                <h5>In Progress</h5>
+                            </div>
+
+                            <div class="icircle"><i class="far fa-circle "></i></div>
+                            <div class="sdata">
+                                <h4>10</h4>
+                                <h5>Upcoming</h5>
+                            </div>
+
+                            <div class="icircle"><i class="far fa-circle "></i></div>
+                            <div class="sdata">
+                                <h4>67</h4>
+                                <h5>Total Project</h5>
+                            </div>
+
+                        </div>
+                        <div class="sicon">
+                            <i class="fa fa-bars"></i>
+                            <i class="fa fa-th-large stroke-transparent"></i>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="proj" id="p1">
+                            <div class="pdates">
+                                <h6>July 2,2020</h6>
+                                <div class="picon">
+                                    <i class="fa fa-circle"></i>
+                                    <i class="fa fa-circle"></i>
+                                </div>
+                            </div>
+                            <div class="ptitle">
+                                <h5>Web Designing</h5>
+                                <h6>Prototyping</h6>
+                            </div>
+                            <div class="pprogress">
+                                <h6>Progress</h6>
+                                <progress max='100' value='90'></progress>
+                                <h6 class="ptr">90%</h6>
+                            </div>
+                            <div class="puserdata">
+                                <div class="user">
+                                    <img src="img/user4.jpg" class="puser" id="u1">
+                                    <img src="img/user7.jpg" class="puser" id="u2">
+                                    <i class="fa fa-plus-circle" id="plus"></i>
+                                </div>
+                                <h5>2 Days Left</h5>
+                            </div>
+                        </div>
+                        <div class="proj" id="p2">
+                            <div class="pdates">
+                                <h6>July 5,2020</h6>
+                                <div class="picon">
+                                    <i class="fa fa-circle"></i>
+                                    <i class="fa fa-circle"></i>
+                                </div>
+                            </div>
+                            <div class="ptitle">
+                                <h5>Mobile App</h5>
+                                <h6>Shopping</h6>
+                            </div>
+                            <div class="pprogress">
+                                <h6>Progress</h6>
+                                <progress max='100' value='30'></progress>
+                                <h6 class="ptr">30%</h6>
+                            </div>
+                            <div class="puserdata">
+                                <div class="user">
+                                    <img src="img/user1.jpg" class="puser" id="u1">
+                                    <img src="img/user3.jpg" class="puser" id="u2">
+                                    <i class="fa fa-plus-circle" id="plus"></i>
+                                </div>
+                                <h5>3 week Left</h5>
+                            </div>
+                        </div>
+                        <div class="proj" id="p3">
+                            <div class="pdates">
+                                <h6>July 10,2020</h6>
+                                <div class="picon">
+                                    <i class="fa fa-circle"></i>
+                                    <i class="fa fa-circle"></i>
+                                </div>
+                            </div>
+                            <div class="ptitle">
+                                <h5>Dashboard</h5>
+                                <h6>Medical</h6>
+                            </div>
+                            <div class="pprogress">
+                                <h6>Progress</h6>
+                                <progress max='100' value='50'></progress>
+                                <h6 class="ptr">50%</h6>
+                            </div>
+                            <div class="puserdata">
+                                <div class="user">
+                                    <img src="img/user4.jpg" class="puser" id="u1">
+                                    <img src="img/user7.jpg" class="puser" id="u2">
+                                    <i class="fa fa-plus-circle" id="plus"></i>
+                                </div>
+                                <h5>2 week Left</h5>
+                            </div>
+                        </div>
+                        <div class="proj" id="p4">
+                            <div class="pdates">
+                                <h6>July 15,2020</h6>
+                                <div class="picon">
+                                    <i class="fa fa-circle"></i>
+                                    <i class="fa fa-circle"></i>
+                                </div>
+                            </div>
+                            <div class="ptitle">
+                                <h5>Web Designing</h5>
+                                <h6>Wireframing</h6>
+                            </div>
+                            <div class="pprogress">
+                                <h6>Progress</h6>
+                                <progress max='100' value='20'></progress>
+                                <h6 class="ptr">20%</h6>
+                            </div>
+                            <div class="puserdata">
+                                <div class="user">
+                                    <img src="img/user5.jpg" class="puser" id="u1">
+                                    <img src="img/user6.jpg" class="puser" id="u2">
+                                    <i class="fa fa-plus-circle" id="plus"></i>
+                                </div>
+                                <h5>3 week Left</h5>
+                            </div>
+                        </div>
+                        <div class="proj" id="p5">
+                            <div class="pdates">
+                                <h6>July 20,2020</h6>
+                                <div class="picon">
+                                    <i class="fa fa-circle"></i>
+                                    <i class="fa fa-circle"></i>
+                                </div>
+                            </div>
+                            <div class="ptitle">
+                                <h5>Mobile App</h5>
+                                <h6>Shopping</h6>
+                            </div>
+                            <div class="pprogress">
+                                <h6>Progress</h6>
+                                <progress max='100' value='50'></progress>
+                                <h6 class="ptr">50%</h6>
+                            </div>
+                            <div class="puserdata">
+                                <div class="user">
+                                    <img src="img/user3.jpg" class="puser" id="u1">
+                                    <img src="img/user4.jpg" class="puser" id="u2">
+                                    <i class="fa fa-plus-circle" id="plus"></i>
+                                </div>
+                                <h5>3 week Left</h5>
+                            </div>
+                        </div>
+                        <div class="proj" id="p6">
+                            <div class="pdates">
+                                <h6>July 25,2020</h6>
+                                <div class="picon">
+                                    <i class="fa fa-circle"></i>
+                                    <i class="fa fa-circle"></i>
+                                </div>
+                            </div>
+                            <div class="ptitle">
+                                <h5>Mobile App</h5>
+                                <h6>Shopping</h6>
+                            </div>
+                            <div class="pprogress">
+                                <h6>Progress</h6>
+                                <progress max='100' value='40'></progress>
+                                <h6 class="ptr">40%</h6>
+                            </div>
+                            <div class="puserdata">
+                                <div class="user">
+                                    <img src="img/user1.jpg" class="puser" id="u1">
+                                    <img src="img/user2.jpg" class="puser" id="u2">
+                                    <i class="fa fa-plus-circle" id="plus"></i>
+                                </div>
+                                <h5>2 week Left</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="chat">
+                    <div class="cheader">
+                        <h4>Client Messages</h3>
+                            <div class="icon">
+                                <i class="fa fa-search"></i>
+                                <div class="cicon">
+                                    <i class="fa fa-circle"></i>
+                                    <i class="fa fa-circle"></i>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="ccontant">
+                        <div class="chatdata">
+                            <img src="img/user7.jpg" alt="">
+                            <div class="chatdescribe">
+                                <div class="ctitle">
+                                    <h5>David</h5>
+                                    <input type="checkbox" name="star" id="star">
+                                    <label for="star"><i class="far fa-star"></i></label>
+
+                                </div>
+                                <div class="cdetail">
+                                    <h6>Hey Tell me about of project ? waiting for your response.</h6>
+                                    <h5>21 July</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chatdata">
+                            <img src="img/user5.jpg" alt="">
+                            <div class="chatdescribe">
+                                <div class="ctitle">
+                                    <h5> Stephanie</h5>
+                                    <input type="checkbox" name="star" id="star">
+                                    <label for="star"><i class="far fa-star"></i></label>
+
+                                </div>
+                                <div class="cdetail">
+                                    <h6>I got your first assignment. It was quite &#128076; You can start work on
+                                        next assignment.</h6>
+                                    <h5>19 July</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chatdata">
+                            <img src="img/user4.jpg" alt="">
+                            <div class="chatdescribe">
+                                <div class="ctitle">
+                                    <h5>William</h5>
+                                    <input type="checkbox" name="star" id="star">
+                                    <label for="star"><i class="far fa-star"></i></label>
+
+                                </div>
+                                <div class="cdetail">
+                                    <h6>I want some changes in previous work you sent me.waiting for your reply.
+                                    </h6>
+                                    <h5>17 July</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chatdata">
+                            <img src="img/user2.jpg" alt="">
+                            <div class="chatdescribe">
+                                <div class="ctitle">
+                                    <h5>Alona</h5>
+                                    <input type="checkbox" name="star" id="star">
+                                    <label for="star"><i class="far fa-star"></i></label>
+
+                                </div>
+                                <div class="cdetail">
+                                    <h6>I am really impressed from your work &#128522; keep doing great work.
+                                    </h6>
+                                    <h5>15 July</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chatdata">
+                            <img src="img/user1.jpg" alt="">
+                            <div class="chatdescribe">
+                                <div class="ctitle">
+                                    <h5>Gulam</h5>
+                                    <input type="checkbox" name="star" id="star">
+                                    <label for="star"><i class="far fa-star"></i></label>
+
+                                </div>
+                                <div class="cdetail">
+                                    <h6>I got your first assignment. It was quite &#128076; You can start work on
+                                        next assignment.
+                                    </h6>
+                                    <h5>21 July</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chatdata">
+                            <img src="img/user6.jpg" alt="">
+                            <div class="chatdescribe">
+                                <div class="ctitle">
+                                    <h5>Hira</h5>
+                                    <input type="checkbox" name="star" id="star">
+                                    <label for="star"><i class="far fa-star"></i></label>
+
+                                </div>
+                                <div class="cdetail">
+                                    <h6>I am really impressed from your work &#128522; keep doing great work.
+                                    </h6>
+                                    <h5>21 July</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

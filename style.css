@@ -1,0 +1,948 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  width: 100%;
+  font-family: "Lato", sans-serif; }
+
+.mainwrap {
+  background-color: #f3f6fd; }
+
+header {
+  position: sticky;
+  top: 0px;
+  padding: 0.8rem 2rem 0.8rem 0rem;
+  width: 100%;
+  z-index: 9;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 8.5% 25% 30% 1fr repeat(5, minmax(40px, auto));
+  grid-template-areas: "bar title search blank plus bell hr user uname";
+  gap: 1rem 0px; }
+  header label {
+    margin: 10px auto; }
+    header label i#bar {
+      font-size: 2.2rem;
+      color: #898989;
+      grid-area: bar; }
+  header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1f1c2f;
+    padding: 0.2rem 1rem;
+    margin: 0 2rem 0 0;
+    grid-area: title;
+    justify-self: center; }
+  header input#search {
+    border-radius: 30px;
+    outline: none;
+    position: relative;
+    border: none;
+    min-width: 10rem;
+    grid-area: search;
+    padding: 0.7rem 1rem 0.7rem 2.5rem;
+    letter-spacing: 1px;
+    background: url("img/search.png") no-repeat 10px;
+    background-size: 1.7rem;
+    background-color: #fff; }
+  header .blank {
+    grid-row: 1fr;
+    grid-area: blank; }
+  header i#plus {
+    grid-area: plus;
+    font-size: 2.1rem;
+    margin: 0 0.7rem; }
+  header i#bell {
+    grid-area: bell;
+    margin: 0 0.7rem;
+    font-size: 1.8rem; }
+  header hr {
+    width: 0.15rem;
+    height: 3rem;
+    grid-area: hr;
+    margin: 0 1.5rem;
+    background-color: #898989;
+    border: none; }
+  header img#user {
+    border-radius: 50%;
+    margin: 0 0.7rem;
+    width: 2.5rem;
+    grid-area: user;
+    justify-self: center; }
+  header h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1f1c2f;
+    grid-area: uname; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: none; }
+
+input[name="navbar"]:checked ~ .pro-chats {
+  width: 81%;
+  left: 18%; }
+
+section.mainsection {
+  position: relative;
+  height: calc(100vh - 5.1rem);
+  overflow-y: scroll; }
+  section.mainsection::-webkit-scrollbar {
+    display: none; }
+  section.mainsection input[name="navbar"]:checked + nav {
+    width: 17%;
+    transition: width 600ms ease-in-out;
+    align-items: flex-start; }
+    section.mainsection input[name="navbar"]:checked + nav label {
+      width: 90%;
+      margin-left: 1rem;
+      padding-left: 0.5rem;
+      justify-content: flex-start; }
+    section.mainsection input[name="navbar"]:checked + nav h4 {
+      width: 80%; }
+  section.mainsection nav {
+    width: 8.5%;
+    position: fixed;
+    transition: width 600ms ease-in-out, transform 600ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f3f6fd;
+    height: calc(100vh - 6rem);
+    overflow-y: scroll;
+    z-index: 999; }
+    section.mainsection nav::-webkit-scrollbar {
+      display: none; }
+    section.mainsection nav i#nav-icon {
+      font-size: 1.6rem;
+      padding: 0.4rem 0.6rem;
+      margin: 0.4rem 0;
+      color: inherit; }
+    section.mainsection nav #nav1 {
+      background-color: #1f1c2f;
+      color: #fff;
+      border-radius: 1.65rem; }
+    section.mainsection nav label {
+      display: flex;
+      width: 3.3rem;
+      height: 3.3rem;
+      align-items: center;
+      justify-content: center;
+      color: #898989;
+      margin: 0.5rem 0;
+      transition: width 600ms ease-in-out; }
+      section.mainsection nav label:hover {
+        background-color: #1f1c2f;
+        color: #fff;
+        border-radius: 1.65rem; }
+        section.mainsection nav label:hover .stroke-transparent {
+          -webkit-text-stroke: 2px #fff;
+          -webkit-text-fill-color: transparent; }
+    section.mainsection nav h4 {
+      width: 0px;
+      overflow: hidden;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: width 600ms ease-in-out; }
+  section.mainsection .pro-chats {
+    width: 90%;
+    position: relative;
+    left: 8.5%;
+    display: flex;
+    transition: left 600ms ease-in-out, width 600ms ease-in-out; }
+    section.mainsection .pro-chats section.pro {
+      flex: 0.65;
+      position: relative;
+      height: calc(100vh - 5.1rem);
+      background-color: #fff;
+      overflow-y: scroll;
+      border-top-left-radius: 2.5rem;
+      border-top-right-radius: 2.5rem;
+      padding: 2rem; }
+      section.mainsection .pro-chats section.pro::-webkit-scrollbar {
+        display: none; }
+      section.mainsection .pro-chats section.pro .main-header {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-between;
+        margin: 1rem 0 2rem; }
+        section.mainsection .pro-chats section.pro .main-header h4.mtitle {
+          font-size: 1.4rem; }
+        section.mainsection .pro-chats section.pro .main-header h4.mdate {
+          font-size: 1rem; }
+      section.mainsection .pro-chats section.pro .sub-header {
+        display: grid;
+        margin: 1.5rem 0;
+        grid-template-columns: minmax(4rem, auto) minmax(4rem, auto);
+        justify-content: space-between; }
+        section.mainsection .pro-chats section.pro .sub-header .status {
+          display: flex;
+          flex-direction: row;
+          align-items: stretch;
+          justify-content: flex-start; }
+          section.mainsection .pro-chats section.pro .sub-header .status .sdata h4 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1f1c2f; }
+          section.mainsection .pro-chats section.pro .sub-header .status .sdata h5 {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #898989; }
+          section.mainsection .pro-chats section.pro .sub-header .status .icircle {
+            align-self: flex-end; }
+            section.mainsection .pro-chats section.pro .sub-header .status .icircle i {
+              font-size: 0.5rem;
+              font-weight: 400;
+              color: #898989;
+              margin: 0 1.5rem; }
+        section.mainsection .pro-chats section.pro .sub-header .sicon i {
+          font-size: 1.3rem;
+          color: #1f1c2f;
+          padding: 0.7rem; }
+      section.mainsection .pro-chats section.pro .project {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 3rem 8%; }
+        section.mainsection .pro-chats section.pro .project div#p1 {
+          border-radius: 2rem;
+          background-color: #fff;
+          transition: box-shadow 300ms;
+          box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.25); }
+          section.mainsection .pro-chats section.pro .project div#p1:hover {
+            box-shadow: 0 0.1rem 1.6rem rgba(0, 0, 0, 0.25); }
+          section.mainsection .pro-chats section.pro .project div#p1 .pdates {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: space-between;
+            padding: 2rem 1.5rem 1rem; }
+            section.mainsection .pro-chats section.pro .project div#p1 .pdates h6 {
+              font-size: 0.9rem;
+              font-weight: 400;
+              color: #898989; }
+            section.mainsection .pro-chats section.pro .project div#p1 .pdates .picon {
+              font-size: 0.45rem;
+              cursor: pointer;
+              display: flex;
+              flex-direction: column;
+              align-items: stretch;
+              justify-content: space-between; }
+          section.mainsection .pro-chats section.pro .project div#p1 .ptitle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 1rem 1.5rem; }
+            section.mainsection .pro-chats section.pro .project div#p1 .ptitle h5 {
+              font-size: 1.2rem;
+              font-weight: 600;
+              color: #1f1c2f; }
+            section.mainsection .pro-chats section.pro .project div#p1 .ptitle h6 {
+              font-size: 1rem;
+              font-weight: 400;
+              color: #898989; }
+          section.mainsection .pro-chats section.pro .project div#p1 .pprogress {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            padding: 1rem 1.5rem; }
+            section.mainsection .pro-chats section.pro .project div#p1 .pprogress h6 {
+              font-size: 1rem;
+              font-weight: 600;
+              color: #1f1c2f; }
+            section.mainsection .pro-chats section.pro .project div#p1 .pprogress progress {
+              height: 0.5rem;
+              width: 100%;
+              border-radius: 1rem;
+              margin: 0.7rem 0; }
+              section.mainsection .pro-chats section.pro .project div#p1 .pprogress progress::-webkit-progress-bar {
+                background: #f3f6fd;
+                border-radius: 0.25rem; }
+              section.mainsection .pro-chats section.pro .project div#p1 .pprogress progress::-webkit-progress-value {
+                background: #2bc8ff;
+                border-top-left-radius: 0.25rem;
+                border-bottom-left-radius: 0.25rem; }
+            section.mainsection .pro-chats section.pro .project div#p1 .pprogress h6.ptr {
+              font-size: 1rem;
+              font-weight: 600;
+              color: #1f1c2f;
+              align-self: flex-end; }
+          section.mainsection .pro-chats section.pro .project div#p1 .puserdata {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            border-top: 2px solid #f3f6fd; }
+            section.mainsection .pro-chats section.pro .project div#p1 .puserdata .user {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: flex-start;
+              position: relative;
+              height: 2rem; }
+              section.mainsection .pro-chats section.pro .project div#p1 .puserdata .user img.puser {
+                width: 1.9rem;
+                border-radius: 50%;
+                position: absolute;
+                top: 0; }
+              section.mainsection .pro-chats section.pro .project div#p1 .puserdata .user #u1 {
+                left: 0.2rem; }
+              section.mainsection .pro-chats section.pro .project div#p1 .puserdata .user #u2 {
+                left: 1.55rem; }
+              section.mainsection .pro-chats section.pro .project div#p1 .puserdata .user i#plus {
+                position: relative;
+                font-size: 2rem;
+                left: 3.8rem;
+                color: #2bc8ff; }
+            section.mainsection .pro-chats section.pro .project div#p1 .puserdata h5 {
+              height: 2.2rem;
+              background-color: #dbf6fd;
+              font-size: 0.9rem;
+              font-weight: 600;
+              color: #2bc8ff;
+              padding: 0.5rem 8%;
+              border-radius: 1.1rem; }
+        section.mainsection .pro-chats section.pro .project div#p2 {
+          border-radius: 2rem;
+          background-color: #fee4cb;
+          transition: box-shadow 300ms;
+          box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.25); }
+          section.mainsection .pro-chats section.pro .project div#p2:hover {
+            box-shadow: 0 0.1rem 1.6rem rgba(0, 0, 0, 0.25); }
+          section.mainsection .pro-chats section.pro .project div#p2 .pdates {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: space-between;
+            padding: 2rem 1.5rem 1rem; }
+            section.mainsection .pro-chats section.pro .project div#p2 .pdates h6 {
+              font-size: 0.9rem;
+              font-weight: 400;
+              color: #898989; }
+            section.mainsection .pro-chats section.pro .project div#p2 .pdates .picon {
+              font-size: 0.45rem;
+              cursor: pointer;
+              display: flex;
+              flex-direction: column;
+              align-items: stretch;
+              justify-content: space-between; }
+          section.mainsection .pro-chats section.pro .project div#p2 .ptitle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 1rem 1.5rem; }
+            section.mainsection .pro-chats section.pro .project div#p2 .ptitle h5 {
+              font-size: 1.2rem;
+              font-weight: 600;
+              color: #1f1c2f; }
+            section.mainsection .pro-chats section.pro .project div#p2 .ptitle h6 {
+              font-size: 1rem;
+              font-weight: 400;
+              color: #898989; }
+          section.mainsection .pro-chats section.pro .project div#p2 .pprogress {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            padding: 1rem 1.5rem; }
+            section.mainsection .pro-chats section.pro .project div#p2 .pprogress h6 {
+              font-size: 1rem;
+              font-weight: 600;
+              color: #1f1c2f; }
+            section.mainsection .pro-chats section.pro .project div#p2 .pprogress progress {
+              height: 0.5rem;
+              width: 100%;
+              border-radius: 1rem;
+              margin: 0.7rem 0; }
+              section.mainsection .pro-chats section.pro .project div#p2 .pprogress progress::-webkit-progress-bar {
+                background: #fff;
+                border-radius: 0.25rem; }
+              section.mainsection .pro-chats section.pro .project div#p2 .pprogress progress::-webkit-progress-value {
+                background: #ff723a;
+                border-top-left-radius: 0.25rem;
+                border-bottom-left-radius: 0.25rem; }
+            section.mainsection .pro-chats section.pro .project div#p2 .pprogress h6.ptr {
+              font-size: 1rem;
+              font-weight: 600;
+              color: #1f1c2f;
+              align-self: flex-end; }
+          section.mainsection .pro-chats section.pro .project div#p2 .puserdata {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            border-top: 2px solid #fff; }
+            section.mainsection .pro-chats section.pro .project div#p2 .puserdata .user {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: flex-start;
+              position: relative;
+              height: 2rem; }
+              section.mainsection .pro-chats section.pro .project div#p2 .puserdata .user img.puser {
+                width: 1.9rem;
+                border-radius: 50%;
+                position: absolute;
+                top: 0; }
+              section.mainsection .pro-chats section.pro .project div#p2 .puserdata .user #u1 {
+                left: 0.2rem; }
+              section.mainsection .pro-chats section.pro .project div#p2 .puserdata .user #u2 {
+                left: 1.55rem; }
+              section.mainsection .pro-chats section.pro .project div#p2 .puserdata .user i#plus {
+                position: relative;
+                font-size: 2rem;
+                left: 3.8rem;
+                color: #ff723a; }
+            section.mainsection .pro-chats section.pro .project div#p2 .puserdata h5 {
+              height: 2.2rem;
+              background-color: #fff;
+              font-size: 0.9rem;
+              font-weight: 600;
+              color: #ff723a;
+              padding: 0.5rem 8%;
+              border-radius: 1.1rem; }
+        section.mainsection .pro-chats section.pro .project div#p3 {
+          border-radius: 2rem;
+          background-color: #baf3d2;
+          transition: box-shadow 300ms;
+          box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.25); }
+          section.mainsection .pro-chats section.pro .project div#p3:hover {
+            box-shadow: 0 0.1rem 1.6rem rgba(0, 0, 0, 0.25); }
+          section.mainsection .pro-chats section.pro .project div#p3 .pdates {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: space-between;
+            padding: 2rem 1.5rem 1rem; }
+            section.mainsection .pro-chats section.pro .project div#p3 .pdates h6 {
+              font-size: 0.9rem;
+              font-weight: 400;
+              color: #898989; }
+            section.mainsection .pro-chats section.pro .project div#p3 .pdates .picon {
+              font-size: 0.45rem;
+              cursor: pointer;
+              display: flex;
+              flex-direction: column;
+              align-items: stretch;
+              justify-content: space-between; }
+          section.mainsection .pro-chats section.pro .project div#p3 .ptitle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 1rem 1.5rem; }
+            section.mainsection .pro-chats section.pro .project div#p3 .ptitle h5 {
+              font-size: 1.2rem;
+              font-weight: 600;
+              color: #1f1c2f; }
+            section.mainsection .pro-chats section.pro .project div#p3 .ptitle h6 {
+              font-size: 1rem;
+              font-weight: 400;
+              color: #898989; }
+          section.mainsection .pro-chats section.pro .project div#p3 .pprogress {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            padding: 1rem 1.5rem; }
+            section.mainsection .pro-chats section.pro .project div#p3 .pprogress h6 {
+              font-size: 1rem;
+              font-weight: 600;
+              color: #1f1c2f; }
+            section.mainsection .pro-chats section.pro .project div#p3 .pprogress progress {
+              height: 0.5rem;
+              width: 100%;
+              border-radius: 1rem;
+              margin: 0.7rem 0; }
+              section.mainsection .pro-chats section.pro .project div#p3 .pprogress progress::-webkit-progress-bar {
+                background: #fff;
+                border-radius: 0.25rem; }
+              section.mainsection .pro-chats section.pro .project div#p3 .pprogress progress::-webkit-progress-value {
+                background: #02d052;
+                border-top-left-radius: 0.25rem;
+                border-bottom-left-radius: 0.25rem; }
+            section.mainsection .pro-chats section.pro .project div#p3 .pprogress h6.ptr {
+              font-size: 1rem;
+              font-weight: 600;
+              color: #1f1c2f;
+              align-self: flex-end; }
+          section.mainsection .pro-chats section.pro .project div#p3 .puserdata {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            border-top: 2px solid #fff; }
+            section.mainsection .pro-chats section.pro .project div#p3 .puserdata .user {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: flex-start;
+              position: relative;
+              height: 2rem; }
+              section.mainsection .pro-chats section.pro .project div#p3 .puserdata .user img.puser {
+                width: 1.9rem;
+                border-radius: 50%;
+                position: absolute;
+                top: 0; }
+              section.mainsection .pro-chats section.pro .project div#p3 .puserdata .user #u1 {
+                left: 0.2rem; }
+              section.mainsection .pro-chats section.pro .project div#p3 .puserdata .user #u2 {
+                left: 1.55rem; }
+              section.mainsection .pro-chats section.pro .project div#p3 .puserdata .user i#plus {
+                position: relative;
+                font-size: 2rem;
+                left: 3.8rem;
+                color: #02d052; }
+            section.mainsection .pro-chats section.pro .project div#p3 .puserdata h5 {
+              height: 2.2rem;
+              background-color: #fff;
+              font-size: 0.9rem;
+              font-weight: 600;
+              color: #02d052;
+              padding: 0.5rem 8%;
+              border-radius: 1.1rem; }
+        section.mainsection .pro-chats section.pro .project div#p4 {
+          border-radius: 2rem;
+          background-color: #ffd3e2;
+          transition: box-shadow 300ms;
+          box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.25); }
+          section.mainsection .pro-chats section.pro .project div#p4:hover {
+            box-shadow: 0 0.1rem 1.6rem rgba(0, 0, 0, 0.25); }
+          section.mainsection .pro-chats section.pro .project div#p4 .pdates {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: space-between;
+            padding: 2rem 1.5rem 1rem; }
+            section.mainsection .pro-chats section.pro .project div#p4 .pdates h6 {
+              font-size: 0.9rem;
+              font-weight: 400;
+              color: #898989; }
+            section.mainsection .pro-chats section.pro .project div#p4 .pdates .picon {
+              font-size: 0.45rem;
+              cursor: pointer;
+              display: flex;
+              flex-direction: column;
+              align-items: stretch;
+              justify-content: space-between; }
+          section.mainsection .pro-chats section.pro .project div#p4 .ptitle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 1rem 1.5rem; }
+            section.mainsection .pro-chats section.pro .project div#p4 .ptitle h5 {
+              font-size: 1.2rem;
+              font-weight: 600;
+              color: #1f1c2f; }
+            section.mainsection .pro-chats section.pro .project div#p4 .ptitle h6 {
+              font-size: 1rem;
+              font-weight: 400;
+              color: #898989; }
+          section.mainsection .pro-chats section.pro .project div#p4 .pprogress {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            padding: 1rem 1.5rem; }
+            section.mainsection .pro-chats section.pro .project div#p4 .pprogress h6 {
+              font-size: 1rem;
+              font-weight: 600;
+              color: #1f1c2f; }
+            section.mainsection .pro-chats section.pro .project div#p4 .pprogress progress {
+              height: 0.5rem;
+              width: 100%;
+              border-radius: 1rem;
+              margin: 0.7rem 0; }
+              section.mainsection .pro-chats section.pro .project div#p4 .pprogress progress::-webkit-progress-bar {
+                background: #fff;
+                border-radius: 0.25rem; }
+              section.mainsection .pro-chats section.pro .project div#p4 .pprogress progress::-webkit-progress-value {
+                background: #ff72ac;
+                border-top-left-radius: 0.25rem;
+                border-bottom-left-radius: 0.25rem; }
+            section.mainsection .pro-chats section.pro .project div#p4 .pprogress h6.ptr {
+              font-size: 1rem;
+              font-weight: 600;
+              color: #1f1c2f;
+              align-self: flex-end; }
+          section.mainsection .pro-chats section.pro .project div#p4 .puserdata {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            border-top: 2px solid #fff; }
+            section.mainsection .pro-chats section.pro .project div#p4 .puserdata .user {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: flex-start;
+              position: relative;
+              height: 2rem; }
+              section.mainsection .pro-chats section.pro .project div#p4 .puserdata .user img.puser {
+                width: 1.9rem;
+                border-radius: 50%;
+                position: absolute;
+                top: 0; }
+              section.mainsection .pro-chats section.pro .project div#p4 .puserdata .user #u1 {
+                left: 0.2rem; }
+              section.mainsection .pro-chats section.pro .project div#p4 .puserdata .user #u2 {
+                left: 1.55rem; }
+              section.mainsection .pro-chats section.pro .project div#p4 .puserdata .user i#plus {
+                position: relative;
+                font-size: 2rem;
+                left: 3.8rem;
+                color: #ff72ac; }
+            section.mainsection .pro-chats section.pro .project div#p4 .puserdata h5 {
+              height: 2.2rem;
+              background-color: #fff;
+              font-size: 0.9rem;
+              font-weight: 600;
+              color: #ff72ac;
+              padding: 0.5rem 8%;
+              border-radius: 1.1rem; }
+        section.mainsection .pro-chats section.pro .project div#p5 {
+          border-radius: 2rem;
+          background-color: #e9e7fd;
+          transition: box-shadow 300ms;
+          box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.25); }
+          section.mainsection .pro-chats section.pro .project div#p5:hover {
+            box-shadow: 0 0.1rem 1.6rem rgba(0, 0, 0, 0.25); }
+          section.mainsection .pro-chats section.pro .project div#p5 .pdates {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: space-between;
+            padding: 2rem 1.5rem 1rem; }
+            section.mainsection .pro-chats section.pro .project div#p5 .pdates h6 {
+              font-size: 0.9rem;
+              font-weight: 400;
+              color: #898989; }
+            section.mainsection .pro-chats section.pro .project div#p5 .pdates .picon {
+              font-size: 0.45rem;
+              cursor: pointer;
+              display: flex;
+              flex-direction: column;
+              align-items: stretch;
+              justify-content: space-between; }
+          section.mainsection .pro-chats section.pro .project div#p5 .ptitle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 1rem 1.5rem; }
+            section.mainsection .pro-chats section.pro .project div#p5 .ptitle h5 {
+              font-size: 1.2rem;
+              font-weight: 600;
+              color: #1f1c2f; }
+            section.mainsection .pro-chats section.pro .project div#p5 .ptitle h6 {
+              font-size: 1rem;
+              font-weight: 400;
+              color: #898989; }
+          section.mainsection .pro-chats section.pro .project div#p5 .pprogress {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            padding: 1rem 1.5rem; }
+            section.mainsection .pro-chats section.pro .project div#p5 .pprogress h6 {
+              font-size: 1rem;
+              font-weight: 600;
+              color: #1f1c2f; }
+            section.mainsection .pro-chats section.pro .project div#p5 .pprogress progress {
+              height: 0.5rem;
+              width: 100%;
+              border-radius: 1rem;
+              margin: 0.7rem 0; }
+              section.mainsection .pro-chats section.pro .project div#p5 .pprogress progress::-webkit-progress-bar {
+                background: #fff;
+                border-radius: 0.25rem; }
+              section.mainsection .pro-chats section.pro .project div#p5 .pprogress progress::-webkit-progress-value {
+                background: #6858ff;
+                border-top-left-radius: 0.25rem;
+                border-bottom-left-radius: 0.25rem; }
+            section.mainsection .pro-chats section.pro .project div#p5 .pprogress h6.ptr {
+              font-size: 1rem;
+              font-weight: 600;
+              color: #1f1c2f;
+              align-self: flex-end; }
+          section.mainsection .pro-chats section.pro .project div#p5 .puserdata {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            border-top: 2px solid #fff; }
+            section.mainsection .pro-chats section.pro .project div#p5 .puserdata .user {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: flex-start;
+              position: relative;
+              height: 2rem; }
+              section.mainsection .pro-chats section.pro .project div#p5 .puserdata .user img.puser {
+                width: 1.9rem;
+                border-radius: 50%;
+                position: absolute;
+                top: 0; }
+              section.mainsection .pro-chats section.pro .project div#p5 .puserdata .user #u1 {
+                left: 0.2rem; }
+              section.mainsection .pro-chats section.pro .project div#p5 .puserdata .user #u2 {
+                left: 1.55rem; }
+              section.mainsection .pro-chats section.pro .project div#p5 .puserdata .user i#plus {
+                position: relative;
+                font-size: 2rem;
+                left: 3.8rem;
+                color: #6858ff; }
+            section.mainsection .pro-chats section.pro .project div#p5 .puserdata h5 {
+              height: 2.2rem;
+              background-color: #fff;
+              font-size: 0.9rem;
+              font-weight: 600;
+              color: #6858ff;
+              padding: 0.5rem 8%;
+              border-radius: 1.1rem; }
+        section.mainsection .pro-chats section.pro .project div#p6 {
+          border-radius: 2rem;
+          background-color: #fff0d3;
+          transition: box-shadow 300ms;
+          box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.25); }
+          section.mainsection .pro-chats section.pro .project div#p6:hover {
+            box-shadow: 0 0.1rem 1.6rem rgba(0, 0, 0, 0.25); }
+          section.mainsection .pro-chats section.pro .project div#p6 .pdates {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: space-between;
+            padding: 2rem 1.5rem 1rem; }
+            section.mainsection .pro-chats section.pro .project div#p6 .pdates h6 {
+              font-size: 0.9rem;
+              font-weight: 400;
+              color: #898989; }
+            section.mainsection .pro-chats section.pro .project div#p6 .pdates .picon {
+              font-size: 0.45rem;
+              cursor: pointer;
+              display: flex;
+              flex-direction: column;
+              align-items: stretch;
+              justify-content: space-between; }
+          section.mainsection .pro-chats section.pro .project div#p6 .ptitle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 1rem 1.5rem; }
+            section.mainsection .pro-chats section.pro .project div#p6 .ptitle h5 {
+              font-size: 1.2rem;
+              font-weight: 600;
+              color: #1f1c2f; }
+            section.mainsection .pro-chats section.pro .project div#p6 .ptitle h6 {
+              font-size: 1rem;
+              font-weight: 400;
+              color: #898989; }
+          section.mainsection .pro-chats section.pro .project div#p6 .pprogress {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            padding: 1rem 1.5rem; }
+            section.mainsection .pro-chats section.pro .project div#p6 .pprogress h6 {
+              font-size: 1rem;
+              font-weight: 600;
+              color: #1f1c2f; }
+            section.mainsection .pro-chats section.pro .project div#p6 .pprogress progress {
+              height: 0.5rem;
+              width: 100%;
+              border-radius: 1rem;
+              margin: 0.7rem 0; }
+              section.mainsection .pro-chats section.pro .project div#p6 .pprogress progress::-webkit-progress-bar {
+                background: #fff;
+                border-radius: 0.25rem; }
+              section.mainsection .pro-chats section.pro .project div#p6 .pprogress progress::-webkit-progress-value {
+                background: #ffc554;
+                border-top-left-radius: 0.25rem;
+                border-bottom-left-radius: 0.25rem; }
+            section.mainsection .pro-chats section.pro .project div#p6 .pprogress h6.ptr {
+              font-size: 1rem;
+              font-weight: 600;
+              color: #1f1c2f;
+              align-self: flex-end; }
+          section.mainsection .pro-chats section.pro .project div#p6 .puserdata {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            border-top: 2px solid #fff; }
+            section.mainsection .pro-chats section.pro .project div#p6 .puserdata .user {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: flex-start;
+              position: relative;
+              height: 2rem; }
+              section.mainsection .pro-chats section.pro .project div#p6 .puserdata .user img.puser {
+                width: 1.9rem;
+                border-radius: 50%;
+                position: absolute;
+                top: 0; }
+              section.mainsection .pro-chats section.pro .project div#p6 .puserdata .user #u1 {
+                left: 0.2rem; }
+              section.mainsection .pro-chats section.pro .project div#p6 .puserdata .user #u2 {
+                left: 1.55rem; }
+              section.mainsection .pro-chats section.pro .project div#p6 .puserdata .user i#plus {
+                position: relative;
+                font-size: 2rem;
+                left: 3.8rem;
+                color: #ffc554; }
+            section.mainsection .pro-chats section.pro .project div#p6 .puserdata h5 {
+              height: 2.2rem;
+              background-color: #fff;
+              font-size: 0.9rem;
+              font-weight: 600;
+              color: #ffc554;
+              padding: 0.5rem 8%;
+              border-radius: 1.1rem; }
+    section.mainsection .pro-chats section.chat {
+      flex: 0.35; }
+      section.mainsection .pro-chats section.chat .cheader {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 2rem;
+        padding: 2rem;
+        border-bottom: 2px solid #dcdddf; }
+        section.mainsection .pro-chats section.chat .cheader h4 {
+          font-size: 1.4rem; }
+        section.mainsection .pro-chats section.chat .cheader .icon {
+          font-size: 1.5rem;
+          width: 3.5rem;
+          display: flex;
+          flex-direction: row;
+          align-items: stretch;
+          justify-content: space-between; }
+          section.mainsection .pro-chats section.chat .cheader .icon .cicon {
+            height: 1.4rem;
+            font-size: 0.45rem;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: space-between; }
+      section.mainsection .pro-chats section.chat .ccontant {
+        height: calc(100vh - 13.875rem);
+        overflow-y: scroll; }
+        section.mainsection .pro-chats section.chat .ccontant::-webkit-scrollbar {
+          display: none; }
+        section.mainsection .pro-chats section.chat .ccontant .chatdata {
+          display: flex;
+          flex-direction: row;
+          align-items: stretch;
+          justify-content: space-between;
+          padding: 0.9rem;
+          border-bottom: 2px solid #dcdddf; }
+          section.mainsection .pro-chats section.chat .ccontant .chatdata img {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 1.75rem;
+            align-self: center;
+            box-sizing: content-box;
+            margin: 1rem 0.75rem 1rem 1rem; }
+          section.mainsection .pro-chats section.chat .ccontant .chatdata .chatdescribe {
+            margin: 0 1rem 0 0.75rem;
+            flex: 1; }
+            section.mainsection .pro-chats section.chat .ccontant .chatdata .chatdescribe .ctitle {
+              display: flex;
+              flex-direction: row;
+              align-items: stretch;
+              justify-content: space-between; }
+              section.mainsection .pro-chats section.chat .ccontant .chatdata .chatdescribe .ctitle h5 {
+                font-size: 1.25rem; }
+            section.mainsection .pro-chats section.chat .ccontant .chatdata .chatdescribe .cdetail {
+              position: relative; }
+              section.mainsection .pro-chats section.chat .ccontant .chatdata .chatdescribe .cdetail h6 {
+                font-size: 0.9rem;
+                font-weight: 500;
+                color: #1f1c2f; }
+              section.mainsection .pro-chats section.chat .ccontant .chatdata .chatdescribe .cdetail h5 {
+                text-align: right;
+                font-size: 1rem;
+                font-weight: 500;
+                color: #898989; }
+
+@media screen and (min-width: 1300px) {
+  section.pro {
+    padding: 2.5rem 3.5rem; }
+    section.pro .project {
+      grid-gap: 5rem 12%; } }
+
+@media screen and (max-width: 1000px) {
+  section.mainsection .pro-chats {
+    width: 99%;
+    display: flex;
+    left: 0%;
+    transition: left 600ms ease-in-out, width 600ms ease-in-out; }
+  input[name="navbar"]:checked ~ .pro-chats {
+    width: 99%;
+    left: 0%; }
+  nav {
+    transform: translateX(-100%); }
+  input[name="navbar"]:checked + nav {
+    width: 30%;
+    transform: translateX(0px); } }
+
+@media screen and (max-width: 900px) {
+  section.mainsection .pro-chats {
+    flex-direction: column; } }
+
+@media screen and (max-width: 800px) {
+  header {
+    grid-template-columns: minmax(10px, auto) 1fr repeat(2, minmax(10px, auto));
+    grid-template-areas: "bar title user uname" "search search plus bell  ";
+    padding: 0.8rem 2rem; }
+    header .icircle,
+    header hr {
+      display: none; }
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #1f1c2f;
+      padding: 0.2rem 1rem;
+      margin: 0;
+      grid-area: title;
+      justify-self: center; } }
+
+@media screen and (max-width: 650px) {
+  section.mainsection input[name="navbar"]:checked + nav {
+    width: 50%; } }
+
+@media screen and (max-width: 620px) {
+  section.mainsection .pro-chats section.pro .sub-header {
+    grid-template-columns: 1fr; }
+    section.mainsection .pro-chats section.pro .sub-header .status .icircle i {
+      margin: 0 1rem !important; }
+    section.mainsection .pro-chats section.pro .sub-header .sicon {
+      justify-self: end; }
+  section.mainsection .pro-chats section.pro .project {
+    grid-template-columns: minmax(auto, 500px);
+    grid-gap: 3rem 7%; } }
+
+@media screen and (max-width: 480px) {
+  header {
+    padding: 0.6rem 1rem;
+    grid-template-columns: minmax(10px, auto) 1fr repeat(2, minmax(10px, auto));
+    grid-template-areas: "bar title title user" "search search plus bell  "; }
+    header h4 {
+      display: none; }
+  section.mainsection input[name="navbar"]:checked + nav {
+    width: 80%; } }
